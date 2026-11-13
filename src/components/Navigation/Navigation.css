@@ -1,0 +1,190 @@
+/* Full-screen mega menu — vertically and horizontally centres the content */
+.nav-menu {
+  position: fixed;
+  inset: 0;
+  background-color: #1D1D1D;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.nav-menu--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Close — fixed to top-left of viewport, independent of centred content */
+.nav-menu__close {
+  position: fixed;
+  top: 2.5rem;
+  left: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  padding: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 201;
+}
+.nav-menu__close:hover { opacity: 0.6; }
+
+/* Centred content wrapper */
+.nav-menu__inner {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Top divider */
+.nav-menu__divider {
+  height: 1px;
+  background-color: #707070;
+  margin-bottom: 4rem;
+}
+
+/* Three-column layout — space-evenly matches THJ site */
+.nav-menu__columns {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.nav-menu__col {
+  flex: 1;
+  min-width: 180px;
+}
+
+/* Column heading */
+.nav-menu__col-heading {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 24px;
+  font-family: var(--font-primary);
+  transition: opacity var(--transition-fast);
+}
+.nav-menu__col-heading:hover { opacity: 0.7; }
+.nav-menu__col-heading--static { cursor: default; }
+.nav-menu__col-heading--static:hover { opacity: 1; }
+
+/* Links */
+.nav-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-menu__link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #999;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  transition: color var(--transition-fast);
+}
+.nav-menu__link:hover { color: #fff; }
+
+/* Contact column */
+.nav-menu__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.nav-menu__contact-line {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  font-family: var(--font-primary);
+  transition: opacity var(--transition-fast);
+}
+.nav-menu__contact-line:hover { opacity: 0.65; }
+
+/* Follow us */
+.nav-menu__follow {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-menu__follow-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  font-family: var(--font-primary);
+}
+
+.nav-menu__social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-menu__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+.nav-menu__social-link:hover { color: #fff; }
+
+/* Bottom logo row */
+.nav-menu__bottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.nav-menu__bottom-line {
+  flex: 1;
+  height: 1px;
+  background-color: #707070;
+}
+
+.nav-menu__bottom-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-menu__inner { max-width: 600px; }
+  .nav-menu__columns { gap: 20px; }
+}
+
+@media (max-width: 600px) {
+  .nav-menu { padding: 1.5rem; }
+  .nav-menu__close { top: 1.5rem; left: 1.5rem; }
+  .nav-menu__columns { flex-direction: column; gap: 32px; }
+  .nav-menu__divider { margin-bottom: 2.5rem; }
+  .nav-menu__bottom { margin-top: 36px; }
+}

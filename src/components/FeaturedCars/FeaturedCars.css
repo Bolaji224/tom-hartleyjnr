@@ -1,0 +1,84 @@
+.featured-cars {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-white);
+}
+
+.featured-cars__heading {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-black);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  text-transform: none;
+}
+
+/* Stage: full-width, holds nav arrows + content */
+.featured-cars__stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Nav arrows — absolute on left and right edges of viewport */
+.featured-cars__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 56px;
+  background-color: #c8c8c8;
+  color: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color var(--transition-fast);
+  flex-shrink: 0;
+}
+.featured-cars__nav--prev { left: 0; }
+.featured-cars__nav--next { right: 0; }
+
+.featured-cars__nav:hover:not(:disabled) {
+  background-color: #aaa;
+}
+.featured-cars__nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Inner container — takes up the content area between the arrows */
+.featured-cars__container-inner {
+  flex: 1;
+  min-width: 0;
+  /* override container padding to allow cards to be close to arrows */
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+}
+
+.featured-cars__track-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.featured-cars__track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.featured-cars__slide {
+  flex-shrink: 0;
+  overflow: hidden;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .featured-cars__container-inner {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+  .featured-cars__nav { width: 36px; height: 48px; }
+}

@@ -1,0 +1,277 @@
+/* Text section */
+.selling-text-section {
+  padding: 60px 0 30px;
+}
+
+.selling-narrow-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.selling-body-text {
+  font-size: 17px;
+  line-height: 160%;
+  color: var(--color-text);
+  margin: 0 0 30px;
+}
+
+/* Enquiry form section */
+.selling-enquiry {
+  background-color: #ffffff;
+  background-image: url('https://www.tomhartleyjnr.com/wp-content/themes/thj/assets/img/bg-tile.png');
+  padding: 100px 0;
+  text-align: center;
+}
+
+.selling-enquiry-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.selling-enquiry-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 110%;
+  margin-bottom: 50px;
+  color: var(--color-black);
+}
+
+/* Form grid */
+.selling-form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 860px;
+  width: 100%;
+  text-align: left;
+}
+
+.sell-field {
+  margin-bottom: 10px;
+  width: calc((100% - 10px) / 2);
+}
+
+.sell-field--full {
+  width: 100%;
+}
+
+.sell-field--section {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sell-field--submit {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Hide labels — placeholders carry the content */
+.sell-field label {
+  display: none;
+}
+
+.sell-field h3 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.sell-field input,
+.sell-field textarea {
+  -webkit-appearance: none;
+  background: #f1f1f1;
+  border: 1px solid #1d1d1d;
+  border-radius: 0;
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  line-height: 1;
+  outline: none;
+  padding: 20px 20px 15px;
+  width: 100%;
+  resize: vertical;
+}
+
+.sell-field input.error,
+.sell-field textarea.error {
+  border-color: #c0392b;
+}
+
+.sell-error {
+  font-size: 11px;
+  color: #e74c3c;
+  display: block;
+  margin-top: 4px;
+}
+
+.sell-submit-btn {
+  background: #1d1d1d;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 18px 10px;
+  width: 180px;
+  transition: background 0.2s ease-in-out;
+}
+
+.sell-submit-btn:hover {
+  background: #989898;
+}
+
+/* Success message */
+.selling-success {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--color-light-grey);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  text-align: left;
+}
+
+.selling-success h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.selling-success p {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* TWO-COLUMN SPLIT */
+.about-split {
+  display: flex;
+  min-height: 600px;
+  margin-top: 80px;
+}
+
+.about-split__left {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  text-decoration: none;
+}
+
+.about-split__left-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.about-split__left-inner {
+  position: relative;
+  z-index: 1;
+  padding: 80px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 600px;
+}
+
+.about-split__left-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.about-split__heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.about-split__subtext {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.65;
+  max-width: 400px;
+  text-align: center;
+}
+
+.about-split__btn {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-black);
+  border: none;
+  padding: 22px 30px 18px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.about-split__left:hover .about-split__btn {
+  background-color: var(--color-white);
+}
+
+.about-split__right {
+  flex: 1;
+  background-color: #f5f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 400px;
+}
+
+.about-split__right-inner {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.about-split__testimonials-heading {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-black);
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .about-split { flex-direction: column; min-height: auto; }
+  .about-split__left { min-height: 360px; }
+}
+
+@media (max-width: 768px) {
+  .about-split__right { padding: 48px 20px; }
+  .about-split__left-inner { padding: 36px 20px; }
+}
+
+@media (max-width: 600px) {
+  .sell-field {
+    width: 100%;
+  }
+}

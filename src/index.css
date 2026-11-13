@@ -1,0 +1,5 @@
+/* Entry point CSS reset — all custom styles are in src/styles/ */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

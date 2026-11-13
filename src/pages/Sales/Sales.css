@@ -1,0 +1,167 @@
+/* BODY COPY */
+.sales-body {
+  padding: 72px 0 48px;
+}
+
+.sales-body__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sales-body__inner p {
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 1.9;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.sales-body__inner p strong {
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* TRIPLE IMAGES */
+.sales-triple {
+  display: flex;
+  width: 100%;
+  height: 320px;
+}
+
+.sales-triple__img {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* TWO-COLUMN SPLIT */
+.sales-split {
+  display: flex;
+  min-height: 560px;
+  margin-top: 80px;
+}
+
+/* LEFT — car image with text overlay */
+.sales-split__left {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  text-decoration: none;
+}
+
+.sales-split__left-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.sales-split__left-inner {
+  position: relative;
+  z-index: 1;
+  padding: 56px 44px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 560px;
+}
+
+.sales-split__left-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.sales-split__heading {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.sales-split__subtext {
+  font-size: clamp(0.82rem, 1.1vw, 0.9rem);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.65;
+  max-width: 300px;
+  text-align: center;
+}
+
+.sales-split__btn {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-black);
+  border: none;
+  padding: 14px 36px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.sales-split__left:hover .sales-split__btn {
+  background-color: var(--color-white);
+}
+
+/* RIGHT — testimonials */
+.sales-split__right {
+  flex: 1;
+  background-color: #f5f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 44px;
+  text-decoration: none;
+  min-height: 560px;
+}
+
+.sales-split__right-inner {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.sales-split__testimonials-heading {
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-black);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sales-split { flex-direction: column; min-height: auto; margin-top: 56px; }
+  .sales-split__left { min-height: 360px; }
+  .sales-triple { height: 220px; }
+}
+
+@media (max-width: 768px) {
+  .sales-body { padding: 48px 0 32px; }
+  .sales-split__right { padding: 48px var(--spacing-md); min-height: auto; }
+  .sales-split__left-inner { padding: 36px var(--spacing-md); min-height: 360px; }
+  .sales-triple { height: 160px; }
+}
+
+@media (max-width: 480px) {
+  .sales-triple { flex-direction: column; height: auto; }
+  .sales-triple__img { height: 200px; }
+}

@@ -1,0 +1,175 @@
+/* ── Page wrapper ── */
+.cs-section {
+  padding: 60px 0 0;
+}
+
+.cs-wrapper {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Filter ── */
+.cs-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.cs-filter__select-field {
+  max-width: 340px;
+  position: relative;
+  width: 100%;
+}
+
+.cs-filter__select-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 2px solid #1d1d1d;
+  color: #1d1d1d;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  outline: none;
+  padding: 18px 45px 14px 15px;
+  width: 100%;
+}
+
+.cs-filter__arrow {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  pointer-events: none;
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+
+.cs-filter__arrow svg {
+  fill: #1d1d1d;
+  height: 22px;
+  width: 22px;
+}
+
+/* ── Listing ── */
+.cs-listing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0 -5px 60px;
+  padding: 0;
+}
+
+.cs-car {
+  margin: 0 5px 10px;
+  position: relative;
+  width: calc((100% - 30px) / 3);
+}
+
+.cs-car a {
+  color: inherit;
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+/* ── Thumbnail ── */
+.cs-thumb {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 320px;
+}
+
+/* ── Card content ── */
+.cs-content {
+  background: #fff;
+  padding: 30px 20px;
+}
+
+.cs-title {
+  color: #1d1d1d;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 110%;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+.cs-details {
+  color: #2b2b2b;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 110%;
+  margin: 0 0 30px;
+}
+
+.cs-price {
+  color: #1d1d1d;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 110%;
+  margin: 0;
+}
+
+.cs-sold {
+  background: #1d1d1d;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 110%;
+  padding: 10px 10px 7px;
+}
+
+/* ── Hover overlay ── */
+.cs-overlay {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  transition: background 0.2s ease-in-out;
+}
+
+.cs-overlay strong {
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  opacity: 0;
+  padding: 17px 40px 15px;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  visibility: hidden;
+}
+
+.cs-car a:hover .cs-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.cs-car a:hover .cs-overlay strong {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cs-car {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-listing {
+    margin: 0 0 30px;
+  }
+
+  .cs-car {
+    margin: 0 0 10px;
+    width: 100%;
+  }
+}

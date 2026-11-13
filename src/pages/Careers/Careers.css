@@ -1,0 +1,187 @@
+/* ── Text body ── */
+.careers-body {
+  padding: 60px 0 30px;
+}
+
+.careers-body__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.careers-body__inner p {
+  font-size: 17px;
+  line-height: 160%;
+  color: var(--color-text);
+  margin: 0 0 30px;
+}
+
+.careers-body__inner p:last-child {
+  margin-bottom: 0;
+}
+
+.careers-body__inner a {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+.careers-vacancies-heading {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+/* ── Two hiring images ── */
+.careers-two-blocks {
+  background-color: #ffffff;
+  background-image: url('https://www.tomhartleyjnr.com/wp-content/themes/thj/assets/img/bg-tile.png');
+  padding: 100px 0 220px;
+  position: relative;
+}
+
+.careers-two-blocks__inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1350px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.careers-two-blocks__block {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 35%;
+  position: relative;
+  width: calc((100% - 120px) / 2);
+}
+
+/* ── About split ── */
+.about-split {
+  display: flex;
+  min-height: 600px;
+  margin-top: 80px;
+}
+
+.about-split__left {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  text-decoration: none;
+}
+
+.about-split__left-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.about-split__left-inner {
+  position: relative;
+  z-index: 1;
+  padding: 80px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 600px;
+}
+
+.about-split__left-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.about-split__heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.about-split__subtext {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.65;
+  max-width: 400px;
+  text-align: center;
+}
+
+.about-split__btn {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-black);
+  border: none;
+  padding: 22px 30px 18px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.about-split__left:hover .about-split__btn {
+  background-color: var(--color-white);
+}
+
+.about-split__right {
+  flex: 1;
+  background-color: #f5f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 400px;
+}
+
+.about-split__right-inner {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.about-split__testimonials-heading {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-black);
+  text-align: center;
+  padding-top: 30px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-split { flex-direction: column; min-height: auto; }
+  .about-split__left { min-height: 360px; }
+  .careers-two-blocks { padding: 60px 0 120px; }
+  .careers-two-blocks__block { width: calc((100% - 40px) / 2); }
+}
+
+@media (max-width: 768px) {
+  .about-split__right { padding: 48px 20px; }
+  .about-split__left-inner { padding: 36px 20px; }
+}
+
+@media (max-width: 600px) {
+  .careers-two-blocks__inner { flex-direction: column; gap: 10px; }
+  .careers-two-blocks__block { width: 100%; padding-bottom: 75%; }
+}

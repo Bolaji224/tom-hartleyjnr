@@ -1,0 +1,111 @@
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-white);
+  flex-shrink: 0;
+}
+
+/* Carousel variant — fills the slide container set by JS */
+.vehicle-card--carousel {
+  width: 100%;
+}
+
+/* Grid variant */
+.vehicle-card--grid {
+  width: 100%;
+}
+
+/* Image wrapper */
+.vehicle-card__image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #f0f0f0;
+}
+
+.vehicle-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+/* Hover overlay */
+.vehicle-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.vehicle-card__overlay-btn {
+  display: inline-block;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 32px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.vehicle-card:hover .vehicle-card__overlay {
+  background: rgba(0, 0, 0, 0.42);
+}
+.vehicle-card:hover .vehicle-card__overlay-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+.vehicle-card:hover .vehicle-card__image {
+  transform: scale(1.03);
+}
+
+/* Card body */
+.vehicle-card__body {
+  padding: 16px 0 24px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+}
+
+.vehicle-card__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.vehicle-card__description {
+  font-size: 0.84rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vehicle-card__price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-black);
+  margin-top: 16px;
+  display: block;
+}
+
+/* width is always 100% of the JS-controlled slide container */

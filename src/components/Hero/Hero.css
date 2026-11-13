@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero--full {
+  height: calc(100vh - var(--header-height));
+  min-height: 600px;
+}
+
+.hero--page {
+  height: 560px;
+}
+
+/* All slide backgrounds stacked, fade in/out */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero__bg--active {
+  opacity: 1;
+}
+
+/* Single-image: subtle ken-burns on hover (non-slideshow only) */
+.hero:not(:has(.hero__bg ~ .hero__bg)) .hero__bg {
+  transition: transform 8s ease, opacity 1s ease;
+}
+.hero:not(:has(.hero__bg ~ .hero__bg)):hover .hero__bg {
+  transform: scale(1.03);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+/* All slide content stacked — only active one visible */
+.hero__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 0 var(--spacing-md) 10%;
+  gap: var(--spacing-sm);
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.hero__content--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero__title {
+  font-size: clamp(1.6rem, 4vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--color-white);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  max-width: 620px;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.hero__cta {
+  margin-top: var(--spacing-xs);
+}
+
+/* Pager dots */
+.hero__pager {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.hero__pager-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.hero__pager-dot--active {
+  background: #fff;
+  border-color: #fff;
+}
+
+.hero__pager-dot:hover:not(.hero__pager-dot--active) {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero--full { height: 65vh; }
+  .hero--page { height: 380px; }
+  .hero__content { padding-bottom: 14%; }
+  .hero__pager { bottom: 20px; }
+}

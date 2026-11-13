@@ -1,0 +1,58 @@
+const CDN = 'https://www.tomhartleyjnr.com/wp-content/uploads';
+
+export const articles = [
+  {
+    id: 1,
+    title: 'The Most Sought-After Ferrari Road Cars of the 1960s',
+    excerpt: 'An exploration of the most desirable and valuable Ferrari road cars produced during one of the most celebrated decades in automotive history.',
+    image: `${CDN}/2026/07/Ferrari-275-GTB-4-116-.jpg`,
+    date: '15 March 2024',
+    slug: 'ferrari-road-cars-1960s',
+    readTime: '8 min read',
+  },
+  {
+    id: 2,
+    title: 'What Makes a Porsche 911 Carrera RS 2.7 So Special?',
+    excerpt: 'The 1973 Porsche 911 Carrera RS 2.7 remains one of the most significant and desirable Porsches ever made. We examine exactly why.',
+    image: `${CDN}/2026/09/Porsche-Carrera-GT-011-.jpg`,
+    date: '8 February 2024',
+    slug: 'porsche-911-carrera-rs-27',
+    readTime: '6 min read',
+  },
+  {
+    id: 3,
+    title: 'The Holy Trinity: LaFerrari, McLaren P1 and Porsche 918 Spyder',
+    excerpt: 'In 2013, three manufacturers unveiled their hybrid hypercars simultaneously. We revisit the significance of these three extraordinary machines.',
+    image: `${CDN}/2026/09/DSC03376.jpg`,
+    date: '20 January 2024',
+    slug: 'holy-trinity-hypercars',
+    readTime: '10 min read',
+  },
+  {
+    id: 4,
+    title: 'Collecting Classic Aston Martins: A Buyer\'s Guide',
+    excerpt: 'From the DB2 to the DB6, we guide you through the most collectible Aston Martins and what to look for when buying.',
+    image: `${CDN}/2026/08/Aston-Martin-Valkyrie-096-.jpg`,
+    date: '5 December 2023',
+    slug: 'collecting-classic-aston-martins',
+    readTime: '7 min read',
+  },
+  {
+    id: 5,
+    title: 'The Art of the Specification: Why Factory Options Matter',
+    excerpt: 'In the collector car world, the original factory specification can make an enormous difference to a car\'s desirability and value.',
+    image: `${CDN}/2026/10/Ferrari-Daytona-365GTB-043-1-1-e1793265651998.jpg`,
+    date: '14 November 2023',
+    slug: 'factory-specification-importance',
+    readTime: '5 min read',
+  },
+  {
+    id: 6,
+    title: 'McLaren\'s Greatest Hits: From the F1 to the Senna',
+    excerpt: 'McLaren has consistently produced some of the world\'s most extraordinary road cars. We chart the highlights of their road car history.',
+    image: `${CDN}/2026/09/McLaren-F1-022-.jpg`,
+    date: '1 October 2023',
+    slug: 'mclaren-greatest-hits',
+    readTime: '9 min read',
+  },
+];

@@ -1,0 +1,96 @@
+/* Full-width banner — car image is the background of the entire section */
+.featured-sale {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: #111;
+}
+
+/* Inner wrapper — matches THJ's 110em max-width, centres content area */
+.featured-sale__inner {
+  display: flex;
+  align-items: center;
+  min-height: 440px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Content box pushed to the right half — the car image composition
+   naturally puts the car on the left, leaving dark studio bg on the right */
+.featured-sale__content {
+  margin-left: auto;
+  max-width: 400px;
+}
+
+/* "Featured Recent Sale" — large bold heading, matches THJ 3.2em */
+.featured-sale__label {
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+/* Car name — bold uppercase, matches THJ banner-content strong */
+.featured-sale__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 1.4;
+  margin: 0 0 2px;
+}
+
+/* Chassis / supporting line — muted */
+.featured-sale__subtitle {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* ▶ Read more */
+.featured-sale__more {
+  margin: 24px 0 0;
+}
+
+.featured-sale__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.featured-sale__link:hover {
+  opacity: 0.65;
+}
+
+.featured-sale__arrow {
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .featured-sale__inner {
+    min-height: 300px;
+    align-items: flex-end;
+    padding: 0;
+  }
+  .featured-sale__content {
+    margin-left: 0;
+    max-width: none;
+    width: 100%;
+    background: #1d1d1d;
+    padding: 32px 24px 36px;
+  }
+}
