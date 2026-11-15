@@ -18,6 +18,7 @@ import Storage from './pages/Storage/Storage';
 import Careers from './pages/Careers/Careers';
 import TomTalks from './pages/TomTalks/TomTalks';
 import TomTalksDetail from './pages/TomTalksDetail/TomTalksDetail';
+import PreviouslySoldDetail from './pages/PreviouslySoldDetail/PreviouslySoldDetail';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/sales" element={<Sales />} />
           <Route path="/current-stock" element={<CurrentStock />} />
           <Route path="/previously-sold" element={<PreviouslySold />} />
+          <Route path="/previously-sold/:slug" element={<PreviouslySoldDetail />} />
           <Route path="/vehicle/:slug" element={<VehicleDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/about-us" element={<About />} />

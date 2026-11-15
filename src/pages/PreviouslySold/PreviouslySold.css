@@ -1,83 +1,146 @@
-.sold-section {
-  padding: var(--spacing-xl) 0 var(--spacing-xxl);
+.ps-section { padding: 60px 0 0; }
+
+.ps-wrapper {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.sold-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl) var(--spacing-lg);
-}
-
-.sold-card {
+/* Filter */
+.ps-filter {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.ps-filter__select-field {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+}
+
+.ps-filter__select-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  background: #fff;
+  border: 2px solid #1d1d1d;
+  color: #1d1d1d;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 18px 45px 14px 15px;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+.ps-filter__arrow {
+  pointer-events: none;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  fill: #1d1d1d;
+}
+.ps-filter__arrow svg { width: 100%; height: 100%; }
+
+/* Grid */
+.ps-listing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -5px 60px;
+  list-style: none;
+  padding: 0;
+}
+
+.ps-car {
+  margin: 0 5px 10px;
+  position: relative;
+  width: calc((100% - 30px) / 3);
+}
+
+.ps-car a {
+  display: block;
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 
-.sold-card__image-wrap {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4/3;
+.ps-thumb {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.sold-card__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow), opacity var(--transition-slow);
+
+.ps-content {
+  background: #fff;
+  padding: 30px 20px;
 }
-.sold-card__overlay {
+
+.ps-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.ps-details {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2b2b2b;
+  margin: 0 0 20px;
+  line-height: 1.4;
+}
+
+.ps-sold {
+  display: inline-block;
+  background: #1d1d1d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 10px 7px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.ps-overlay {
+  pointer-events: none;
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease-in-out;
+}
+
+.ps-overlay strong {
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 17px 40px 15px;
+  transition: all 0.2s ease-in-out;
   opacity: 0;
-  transition: opacity var(--transition-fast);
-}
-.sold-card__view {
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-white);
-  border: 1px solid rgba(255,255,255,0.6);
-  padding: 10px 24px;
-}
-.sold-card:hover .sold-card__overlay { opacity: 1; }
-.sold-card:hover .sold-card__image { transform: scale(1.04); }
-
-.sold-card__body {
-  padding: var(--spacing-sm) 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  visibility: hidden;
 }
 
-.sold-card__title {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-black);
-}
-
-.sold-card__meta {
-  font-size: 0.72rem;
-  color: var(--color-muted);
-  letter-spacing: 0.06em;
-}
-
-.sold-card__description {
-  font-size: 0.8rem;
-  color: var(--color-muted);
-  line-height: 1.6;
-}
+.ps-car a:hover .ps-overlay { background: rgba(0, 0, 0, 0.7); }
+.ps-car a:hover .ps-overlay strong { opacity: 1; visibility: visible; }
 
 @media (max-width: 1024px) {
-  .sold-grid { grid-template-columns: repeat(2, 1fr); }
+  .ps-car { width: calc((100% - 20px) / 2); }
 }
+
 @media (max-width: 600px) {
-  .sold-grid { grid-template-columns: 1fr; }
+  .ps-listing { margin: 0 0 30px; }
+  .ps-car { margin: 0 0 10px; width: 100%; }
 }

@@ -155,6 +155,34 @@
 }
 .nav-menu__social-link:hover { color: #fff; }
 
+/* Flags row */
+.nav-menu__flags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.nav-menu__flag-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.nav-menu__flag-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+.nav-menu__flag-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Bottom logo row */
 .nav-menu__bottom {
   display: flex;

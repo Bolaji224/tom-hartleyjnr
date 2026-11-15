@@ -120,6 +120,7 @@ const Navigation = ({ isOpen, onClose }) => {
             <div className="nav-menu__follow">
               <span className="nav-menu__follow-label">Follow Us</span>
               <div className="nav-menu__social">
+
                 <a href="#" className="nav-menu__social-link" aria-label="X (Twitter)" tabIndex={isOpen ? 0 : -1}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.252 2.25h6.937l4.26 5.633zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
@@ -132,6 +133,27 @@ const Navigation = ({ isOpen, onClose }) => {
                 <a href="#" className="nav-menu__social-link" aria-label="YouTube" tabIndex={isOpen ? 0 : -1}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
                 </a>
+                <a href="https://www.tiktok.com/@tom.hartley42" target="_blank" rel="noopener noreferrer" className="nav-menu__social-link" aria-label="TikTok" tabIndex={isOpen ? 0 : -1}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.17 1.32.69 2.65 1.63 3.56 1.3 1.26 3.14 1.84 4.94 1.98v3.84c-1.69-.06-3.37-.49-4.84-1.28-.69-.38-1.32-.83-1.86-1.37-.01 3.44.01 6.88-.02 10.32-.07 1.59-.62 3.17-1.57 4.47-1.52 2.07-3.98 3.33-6.49 3.35-1.59.07-3.19-.45-4.52-1.4-2.3-1.58-3.74-4.27-3.6-7.03.1-2.48 1.28-4.86 3.17-6.46 1.56-1.35 3.59-2.08 5.63-2.04.03 1.42-.03 2.84-.03 4.26-1.02-.29-2.14-.25-3.1.21-1.42.68-2.42 2.09-2.57 3.68-.27 1.98.84 4.03 2.66 4.9 1.08.57 2.33.73 3.52.49 1.13-.22 2.17-.88 2.93-1.78.47-.58.84-1.26 1.03-1.98.11-.62.08-1.26.08-1.9V.01l3.95.01z"/></svg>
+                </a>
+              </div>
+
+              <div className="nav-menu__flags">
+                {[
+                  { code: 'gb', alt: 'English' },
+                  { code: 'de', alt: 'German' },
+                  { code: 'es', alt: 'Spanish' },
+                  { code: 'fr', alt: 'French' },
+                  { code: 'it', alt: 'Italian' },
+                ].map(f => (
+                  <button key={f.code} className="nav-menu__flag-btn" aria-label={f.alt} tabIndex={isOpen ? 0 : -1}>
+                    <img
+                      src={`https://flagcdn.com/w40/${f.code}.png`}
+                      alt={f.alt}
+                      className="nav-menu__flag-img"
+                    />
+                  </button>
+                ))}
               </div>
             </div>
           </div>
