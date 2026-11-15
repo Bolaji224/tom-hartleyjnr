@@ -1,7 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Phone } from 'lucide-react';
 import Navigation from '../Navigation/Navigation';
 import './Header.css';
+
+const otherCountries = [
+  { code: 'de', alt: 'German' },
+  { code: 'es', alt: 'Spanish' },
+  { code: 'fr', alt: 'French' },
+  { code: 'it', alt: 'Italian' },
+];
 
 const THJLogo = ({ fill = '#1B1B1B' }) => (
   <svg
@@ -21,6 +28,8 @@ const THJLogo = ({ fill = '#1B1B1B' }) => (
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -32,6 +41,17 @@ const Header = () => {
     document.body.style.overflow = navOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [navOpen]);
+
+  useEffect(() => {
+    if (!langOpen) return;
+    const handleClick = e => {
+      if (langRef.current && !langRef.current.contains(e.target)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [langOpen]);
 
   return (
     <>
@@ -72,18 +92,48 @@ const Header = () => {
 
           {/* Right: Language + Phone */}
           <div className="site-header__right">
-            <button className="site-header__lang" aria-label="Select language">
-              <span className="site-header__flag" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#012169"/>
-                  <path d="M0 12h24M12 0v24" stroke="#fff" strokeWidth="4"/>
-                  <path d="M0 0l24 24M24 0L0 24" stroke="#fff" strokeWidth="2.5"/>
-                  <path d="M0 0l24 24M24 0L0 24" stroke="#C8102E" strokeWidth="1.5"/>
-                  <path d="M0 12h24M12 0v24" stroke="#C8102E" strokeWidth="2.5"/>
-                </svg>
-              </span>
-              <ChevronDown size={11} className="site-header__lang-arrow" />
-            </button>
+            <div className="site-header__lang-wrap" ref={langRef}>
+              <button
+                className="site-header__lang"
+                aria-label="Select language"
+                aria-expanded={langOpen}
+                onClick={() => setLangOpen(o => !o)}
+              >
+                <span className="site-header__flag" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#012169"/>
+                    <path d="M0 12h24M12 0v24" stroke="#fff" strokeWidth="4"/>
+                    <path d="M0 0l24 24M24 0L0 24" stroke="#fff" strokeWidth="2.5"/>
+                    <path d="M0 0l24 24M24 0L0 24" stroke="#C8102E" strokeWidth="1.5"/>
+                    <path d="M0 12h24M12 0v24" stroke="#C8102E" strokeWidth="2.5"/>
+                  </svg>
+                </span>
+                <ChevronDown
+                  size={11}
+                  className={`site-header__lang-arrow${langOpen ? ' site-header__lang-arrow--open' : ''}`}
+                />
+              </button>
+
+              {langOpen && (
+                <ul className="site-header__lang-dropdown">
+                  {otherCountries.map(c => (
+                    <li key={c.code}>
+                      <button
+                        className="site-header__lang-option"
+                        aria-label={c.code}
+                        onClick={() => setLangOpen(false)}
+                      >
+                        <img
+                          src={`https://flagcdn.com/w40/${c.code}.png`}
+                          alt={c.alt}
+                          className="site-header__flag-img"
+                        />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
             <a href="tel:+447353851226" className="site-header__phone" aria-label="Call us on +44 7353 851226">
               <Phone size={13} className="site-header__phone-icon" aria-hidden="true" />
               <span>+44 7353 851226</span>

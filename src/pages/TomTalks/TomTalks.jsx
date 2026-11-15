@@ -5,7 +5,7 @@ import './TomTalks.css';
 const CDN = 'https://www.tomhartleyjnr.com/wp-content/uploads';
 const LOGO = 'https://www.tomhartleyjnr.com/wp-content/themes/thj/assets/img/tom-talks-header.png';
 
-const videos = [
+export const videos = [
   {
     episode: null,
     title: 'Tom Talks: The car in which Lewis Hamilton won his first two races | Tom Hartley Jnr',

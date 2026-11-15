@@ -17,6 +17,7 @@ import Finance from './pages/Finance/Finance';
 import Storage from './pages/Storage/Storage';
 import Careers from './pages/Careers/Careers';
 import TomTalks from './pages/TomTalks/TomTalks';
+import TomTalksDetail from './pages/TomTalksDetail/TomTalksDetail';
 
 const App = () => {
   return (
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/join-the-team" element={<Careers />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/tomtalks" element={<TomTalks />} />
+          <Route path="/tomtalks/:slug" element={<TomTalksDetail />} />
           <Route path="/videos" element={<TomTalks />} />
           <Route path="*" element={<Home />} />
         </Route>
